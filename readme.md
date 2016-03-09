@@ -1,5 +1,7 @@
 # Point of Sale
 
+[![Join the chat at https://gitter.im/meat147/Point-of-Sale](https://badges.gitter.im/meat147/Point-of-Sale.svg)](https://gitter.im/meat147/Point-of-Sale?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/meat147/Point-of-Sale/blob/master/LICENSE)
 
 **Please note**: Whilst open-source, until otherwise stated, Point of Service will not be in a usable state.
