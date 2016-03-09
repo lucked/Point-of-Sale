@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<script><%= products %></script>
+<div class="container">
+    <h2>Neue Bestellung für <%= customer.name %> </h2>
+    <div class="row">
+        <div class="col-lg-4">
+            <%= customer.phone %>
+        </div>
+    </div>
+    <div class="panel-heading">Bestellt</div>
+    <table class="table">
+        <tr>
+            <th class="th-id">#</th>
+            <th>Produkt Name</th>
+            <th>Beschreibung</th>
+            <th>Preis</th>
+        </tr>
+        <% products.forEach(function(product){ %>
+        <tr>
+            <td><%= product.ordernumber %></td>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.price %> €</td>
+        </tr>
+        <% }); %>
+
+</div>
+
+
+<% include ../partials/footer %>
