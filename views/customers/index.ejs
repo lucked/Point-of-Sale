@@ -30,7 +30,7 @@
                     </button>
                 </td>
                 <td>
-                    <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">Neue Bestellung</a>
+                    <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
                 </td>
                 <td>
                     <form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">
@@ -44,7 +44,7 @@
 
 
     <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#newcustomer">
-        Kunden Hinzufügen
+        New customer
     </button>
 </div>
 <!-- Button trigger modal -->
@@ -57,7 +57,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Neuer Kunde</h4>
+                <h4 class="modal-title" id="myModalLabel">New customer</h4>
             </div>
             <div class="modal-body">
                 <form action="/customers" method="POST">
@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Telefonnummer"
+                                <input type="text" class="form-control" placeholder="Phonenumber"
                                        name="customer[phone]">
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <h1 style="color: red;">Google Maps API</h1>
-                                <input type="text" class="form-control" placeholder="Adress Suche">
+                                <input type="text" class="form-control" placeholder="Adress search">
                             </div>
                         </div>
 
@@ -157,7 +157,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Telefonnummer"
+                                <input type="text" class="form-control" placeholder="Phonenumber"
                                        name="customer[phone]" id="phone">
                             </div>
                         </div>
@@ -179,7 +179,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <h1 style="color: red;">Google Maps API</h1>
-                                <input type="text" class="form-control" placeholder="Adress Suche">
+                                <input type="text" class="form-control" placeholder="Adress search">
                             </div>
                         </div>
 

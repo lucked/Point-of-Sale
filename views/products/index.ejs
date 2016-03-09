@@ -15,7 +15,7 @@
                 <div class="col-lg-2">
                     <button type="button" class="btn btn-primary pull-right" data-toggle="modal"
                             data-target="#newproduct">
-                        Produkt hinzufügen
+                        Add product
                     </button>
                 </div>
 
@@ -29,9 +29,9 @@
         <table class="table">
             <tr>
                 <th class="th-id">#</th>
-                <th>Produkt Name</th>
-                <th>Beschreibung</th>
-                <th>Preis</th>
+                <th>Product name</th>
+                <th>description</th>
+                <th>price</th>
             </tr>
             <% products.forEach(function(product){ %>
             <tr>
@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="form-group">
-                                <input class="form-control" type="text" name="product[name]" placeholder="Produkt Name">
+                                <input class="form-control" type="text" name="product[name]" placeholder="Product name">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -91,14 +91,14 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <input class="form-control" type="text" name="product[description]"
-                                       placeholder="Beschreibung">
+                                       placeholder="Description">
                             </div>
 
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="product[ordernumber]"
-                                       placeholder="Bestell Nummer"></i>
+                                       placeholder="Order Number"></i>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,6 @@
 </div>
 
 <script type="text/javascript" src="/js/product.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true&libraries=places&callback=initAutocomplete"
-async defer></script>
+
 
 <% include ../partials/footer %>
