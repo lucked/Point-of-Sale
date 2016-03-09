@@ -8,6 +8,22 @@
 
 Contributing Guidelines coming soon.
 
+
+### Setup
+- download the repository
+- run npm install
+- run node ./bin/www
+- visit [http://localhost:3000](http://localhost:3000)
+
+
+### How to contribute
+- Fork the Project
+- Checkout your fork
+- commit changes to a new branch
+- create a pull request
+- done
+
+
 ## Security
 
 If you discover a security vulnerability in Point of Service, please send an email to  ([meat147@icloud.com](mailto:meat147@icloud.com)). Any security vulnerabilities discovered will be addressed with the highest priority.
