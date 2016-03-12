@@ -8,23 +8,39 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-
-$('#newcustomer').on('show.bs.modal',function(e){
-  console.log("initializing autocomplete")
-  initAutocomplete();
-})
-
-function initAutocomplete() {
+$('#newcustomer').on('show.bs.modal', function() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
-  var inputField = document.getElementById('newCustAdd')
-  autocomplete = new google.maps.places.Autocomplete(inputField);
+  console.log('in newcustomer');
+  var inputField;
+  document.getElementById('newCustAdd').addEventListener('click', function() {
+
+     inputField = document.getElementById('newCustAdd');
+     autocomplete = new google.maps.places.Autocomplete(inputField);
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
-  autocomplete.addListener('place_changed', fillInAddress);
+    autocomplete.addListener('place_changed', fillInAddress);
+  });
 
-} 
+});
+
+$('#editCustomer').on('show.bs.modal', function() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  console.log('in editCustomer');
+  var inputField;
+  document.getElementById('editCustAdd').addEventListener('click', function() {
+
+     inputField = document.getElementById('editCustAdd');
+     autocomplete = new google.maps.places.Autocomplete(inputField);
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+    autocomplete.addListener('place_changed', fillInAddress);
+  });
+
+});
 
 //use this function to populate the selected address in respective field
 function fillInAddress() {
