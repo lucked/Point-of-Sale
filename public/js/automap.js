@@ -3,13 +3,14 @@ var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
   locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
+  //administrative_area_level_1: 'short_name',
+  //country: 'long_name',
   postal_code: 'short_name'
 };
 
+
 $('#newcustomer').on('show.bs.modal',function(e){
-  console.log("initializing autocomlete")
+  console.log("initializing autocomplete")
   initAutocomplete();
 })
 
@@ -17,19 +18,21 @@ function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
   var inputField = document.getElementById('newCustAdd')
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */inputField);
+  autocomplete = new google.maps.places.Autocomplete(inputField);
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
   autocomplete.addListener('place_changed', fillInAddress);
-}
+
+} 
+
 //use this function to populate the selected address in respective field
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
 
   for (var component in componentForm) {
+    console.log(component);
     document.getElementById(component).value = '';
     document.getElementById(component).disabled = false;
   }
