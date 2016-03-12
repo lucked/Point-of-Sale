@@ -2,3 +2,11 @@
     max-width: 30px;
     width: auto;
 }
+
+.modal{
+	z-index: 20;
+}
+
+.modal-backdrop{
+	z-index: 10;
+}
