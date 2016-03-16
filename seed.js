@@ -7,7 +7,7 @@ for (i=0; i<100; i++) {
     var obj= {
         name : Faker.commerce.productName(),
         price : Faker.commerce.price(),
-        description:  Faker.lorem.sentence(3),
+        description:  Faker.lorem.sentence(1),
         ordernumber: Math.floor((Math.random() * 200) + 1)
     };
     arr.push(obj);
