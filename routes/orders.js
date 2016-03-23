@@ -34,22 +34,18 @@ router.post("/", function (req, res) {
             console.log(err);
             res.redirect("/customers");
         } else {
-            var products = req.body.orderlist;
-            console.log (products);
-            console.log (typeof (products));
-            console.log (req.body.info);
-            console.log (customer.id);
-            console.log (customer.name);
-
-            order.create(products, function (err, order) {
-                if (err) {
+            var neworder = {
+                info: req.body.info,
+                customer : {
+                    Customer: customer.name,
+                    id: customer.id
+                },
+                products: req.body.orderlist
+            };
+            order.create(neworder, function (err, order) {
+                if (err){
                     console.log(err);
                 } else {
-                    order.customer.id = customer.id;
-                    order.products = products;
-                    order.customer.name = customer.name;
-                    order.info = req.body.info;
-                    order.save();
                     customer.orders.push(order);
                     customer.save();
 

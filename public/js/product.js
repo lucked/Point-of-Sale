@@ -6,7 +6,7 @@ $('#editproduct').on('show.bs.modal', function (event) {
     var description = button.data('product-description'); // Extract info from data-* attributes
     var ordernumber = button.data('product-ordernumber'); // Extract info from data-* attributes
     var id = button.data('product-id'); // Extract info from data-* attributes
-    console.log (id)
+    console.log (id);
     var modal = $(this);
     modal.find('.modal-title').text('Produkt bearbeiten' + name);
     modal.find('#name').val(name);

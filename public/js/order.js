@@ -23,8 +23,8 @@ function addOrderlist(id) {
     var secondcell = newRow.insertCell(1);
 
     // Append a text node to the cell
-    var newText = document.createTextNode(product.name)
-    var secondtext = document.createTextNode(product.price + " €")
+    var newText = document.createTextNode(product.name);
+    var secondtext = document.createTextNode(product.price + " €");
     newCell.appendChild(newText);
     secondcell.appendChild(secondtext);
     updatePrice(product.price);

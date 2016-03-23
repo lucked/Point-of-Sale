@@ -21,10 +21,11 @@ var OrderSchema = mongoose.Schema({
     },
     products: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Product"
+            type : mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
         }
     ]
+
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
