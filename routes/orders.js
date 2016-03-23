@@ -27,32 +27,39 @@ router.get("/new", function (req, res) {
         //res.render("comments/new")
     }
 );
-//
-//
-//router.post("/",middleware.isLoggedIn, function (req, res) {
-//    Campground.findById(req.params.id, function (err, campground) {
-//        if (err) {
-//            console.log(err);
-//            res.redirect("/campgrounds");
-//        } else {
-//            Comment.create(req.body.comment, function (err, comment) {
-//                if (err) {
-//                    req.flash ("error", "Something went Wrong");
-//                    console.log(err);
-//                } else {
-//                    comment.author.id = req.user._id;
-//                    comment.author.username = req.user.username;
-//                    comment.save();
-//                    campground.comments.push(comment);
-//                    campground.save();
-//                    req.flash ("success", "Added your Comment");
-//
-//                    res.redirect('/campgrounds/' + campground._id);
-//                }
-//            });
-//        }
-//    });
-//});
+
+router.post("/", function (req, res) {
+    customer.findById(req.params.id, function (err, customer) {
+        if (err) {
+            console.log(err);
+            res.redirect("/customers");
+        } else {
+            var products = req.body.orderlist;
+            console.log (products);
+            console.log (typeof (products));
+            console.log (req.body.info);
+            console.log (customer.id);
+            console.log (customer.name);
+
+            order.create(products, function (err, order) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    order.customer.id = customer.id;
+                    order.products = products;
+                    order.customer.name = customer.name;
+                    order.info = req.body.info;
+                    order.save();
+                    customer.orders.push(order);
+                    customer.save();
+
+                    res.redirect('/customers');
+                }
+            });
+
+        }
+    });
+});
 //
 //router.get ("/:comment_id/edit",middleware.checkCommentOwnership, function (req,res) {
 //    console.log (req.params.id)

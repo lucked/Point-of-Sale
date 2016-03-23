@@ -3,10 +3,10 @@
     width: auto;
 }
 
-.modal{
-	z-index: 20;
+.modal {
+    z-index: 20;
 }
 
-.modal-backdrop{
-	z-index: 10;
+.modal-backdrop {
+    z-index: 10;
 }

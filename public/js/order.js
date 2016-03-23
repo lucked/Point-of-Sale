@@ -1,18 +1,20 @@
 /**
  * Created by Pierre on 16.03.16.
  */
-var table = document.getElementById("ordered");
+counter = 0;
+function findById(source, id) {
+    for (var i = 0; i < source.length; i++) {
+        if (source[i]._id === id) {
+            return source[i];
+        }
+    }
+    throw "Couldn't find object with id: " + id;
+}
 
 function addOrderlist(id) {
-    function findById(source, id) {
-        for (var i = 0; i < source.length; i++) {
-            if (source[i]._id === id) {
-                return source[i];
-            }
-        }
-        throw "Couldn't find object with id: " + id;
-    };
+
     product = findById(products, id);
+    var table = document.getElementById("ordertable");
 
     var newRow = table.insertRow(table.rows.length);
 
@@ -25,4 +27,30 @@ function addOrderlist(id) {
     var secondtext = document.createTextNode(product.price + " €")
     newCell.appendChild(newText);
     secondcell.appendChild(secondtext);
-};
+    updatePrice(product.price);
+    updateordered(product._id);
+}
+
+function updateordered (id) {
+
+
+    var input = document.createElement("input");
+
+    input.setAttribute("type", "hidden");
+
+    input.setAttribute("name", "orderlist[" + counter + "]");
+
+    input.setAttribute("value", id);
+
+    document.getElementById("orderform").appendChild(input);
+counter ++
+}
+function updatePrice (price) {
+    sum = document.getElementById("sum");
+
+    oldtotal = parseInt(sum.innerHTML);
+    newtotal = oldtotal + price;
+
+    sum.innerHTML = newtotal;
+
+}

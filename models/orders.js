@@ -4,13 +4,14 @@ var OrderSchema = mongoose.Schema({
     info: String,
     delivered: {type: Boolean, default: false},
     ordered: {type: Date, default: Date.now},
-    employer: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        },
-        username: String
-    },
+    // to be added when login / user management ist enabled
+    //employer: {
+    //    id: {
+    //        type: mongoose.Schema.Types.ObjectId,
+    //        ref: "User"
+    //    },
+    //    username: String
+    //},
     customer: {
         id: {
             type: mongoose.Schema.Types.ObjectId,
