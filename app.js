@@ -26,7 +26,7 @@ var app = express();
 mongoose.connect("mongodb://localhost/pizzakladow");
 app.use(methodOverride("_method"));
 app.use(flash());
-//seedDB();
+seedDB();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
