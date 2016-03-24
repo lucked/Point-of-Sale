@@ -10,7 +10,7 @@ var customer = require("../models/customers");
 
 //INDEX - show all Products
 router.get("/", function (req, res) {
-    customer.find({}, function (err, allCustomers) {
+    customer.find({}).populate("orders").exec(function (err, allCustomers) {
         if (err) {
             console.log(err);
         } else {
