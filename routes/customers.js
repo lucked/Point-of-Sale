@@ -32,7 +32,7 @@ router.post("/", function (req, res) {
 });
 
 
-// UPDATE - Update / Edit a product
+// UPDATE - Update / Edit a Customer
 router.put("/:id", function (req, res) {
 
     customer.findByIdAndUpdate(req.params.id, req.body.customer, function (err) {
