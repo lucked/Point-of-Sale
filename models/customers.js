@@ -11,6 +11,7 @@ var CustomerSchema = new mongoose.Schema({
     street: String,
     housenumber: String,
     city: String,
+    deleted: {type: Boolean, default: false},
     zipcode: String,
     story: String,
 

@@ -10,3 +10,9 @@
 .modal-backdrop {
     z-index: 10;
 }
+
+.disabled {
+    background-color: lightgrey;
+    text-decoration: line-through;
+    opacity: 0.4;
+}

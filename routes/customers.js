@@ -47,7 +47,7 @@ router.put("/:id", function (req, res) {
 
 // REMOVE - Delete a product
 router.delete("/:id", function (req, res) {
-    customer.findByIdAndRemove(req.params.id, function (err) {
+    customer.findByIdAndUpdate(req.params.id,{deleted:true} ,function (err){
         if (err) {
             res.redirect("/")
         } else {
