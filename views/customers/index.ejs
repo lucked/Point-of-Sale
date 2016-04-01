@@ -5,7 +5,24 @@
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">Customers</div>
-        <h1 style="color: red"> SEARCH</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <br>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="Search">
+
+                </div>
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#newcustomer">
+                        New customer
+                    </button>
+                </div>
+
+            </div>
+            <br>
+        </div>
+
+
         <!-- Table -->
         <table class="table">
             <tr>
@@ -15,7 +32,7 @@
                 <th>Address</th>
                 <th>edit</th>
                 <th>new</th>
-                <th>delete</th>
+                <!--<th>delete</th>-->
             </tr>
 
             <% customer.forEach(function(customer){ %>
@@ -32,20 +49,17 @@
                 <td>
                     <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
                 </td>
-                <td>
-                    <form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
+                <!--<td>-->
+                    <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
+                        <!--<button class="btn btn-danger">Delete</button>-->
+                    <!--</form>-->
+                <!--</td>-->
             </tr>
             <% }); %>
         </table>
     </div>
 
 
-    <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#newcustomer">
-        New customer
-    </button>
 </div>
 <!-- Button trigger modal -->
 
