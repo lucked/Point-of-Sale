@@ -33,7 +33,8 @@ router.post("/", function (req, res) {
 
 // UPDATE - Update / Edit a product
 router.put ("/:id", function (req,res) {
-    Product.findByIdAndUpdate(req.params.id, req.body.product, function (err,updatedcampground) {
+    Product.findByIdAndUpdate(req.params.id, req.body.product, function (err,updatedproduct) {
+        console.log(updatedproduct);
         if (err) {
             res.redirect("/")
         } else {

@@ -60,6 +60,13 @@
                         <button class="btn btn-danger">Delete</button>
                     </form>
                     <% } %>
+
+                    <% if(product.deleted === true) { %>
+                    <form id="undelete-form" action="/products/<%= product._id %>?_method=PUT" method="POST">
+                        <input type="hidden" value="false" name="product[deleted]">
+                        <button class="btn">undelete</button>
+                    </form>
+                    <% } %>
                 </td>
             </tr>
 
