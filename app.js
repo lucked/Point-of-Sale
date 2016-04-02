@@ -9,7 +9,7 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var methodOverride = require ("method-override");
 var flash = require ("connect-flash");
-var User = require("./models/user");
+var User = require("./models/users");
 var seedDB = require("./seed");
 
 //Routes
