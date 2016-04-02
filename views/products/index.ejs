@@ -2,80 +2,71 @@
 
 
 <div class="container">
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Panel heading</div>
-        <br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" placeholder="Search">
+    <div class="row">
+        <div class="col-lg-10">
+            <input type="text" class="form-control" placeholder="Search">
 
-                </div>
-                <div class="col-lg-2">
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal"
-                            data-target="#newproduct">
-                        Add product
-                    </button>
-                </div>
-
-            </div>
-            <br>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-primary center-block" data-toggle="modal"
+                    data-target="#newproduct">
+                Add product
+            </button>
         </div>
 
-        <!-- Table -->
-
-
-        <table class="table">
-            <tr>
-                <th class="th-id">#</th>
-                <th>Product name</th>
-                <th>description</th>
-                <th>price</th>
-            </tr>
-            <% products.forEach(function(product){ %>
-            <tr
-                    <% if(product.deleted === true) { %>
-                    class="disabled"
-                    <% } %>
-            >
-                <td><%= product.ordernumber %></td>
-                <td><%= product.name %></td>
-                <td><%= product.description %></td>
-                <td><%= product.price %> €</td>
-
-                <td>
-                    <% if(product.deleted === false) { %>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editproduct"
-                            data-product-name="<%= product.name %>" data-product-price="<%= product.price %>"
-                            data-product-description="<%= product.description %>"
-                            data-product-ordernumber="<%= product.ordernumber %>" data-product-id="<%= product._id %>">
-                        Edit
-                    </button>
-                    <% } %>
-                </td>
-                <td>
-                    <% if(product.deleted === false) { %>
-                    <form id="delete-form" action="/products/<%= product._id %>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
-                    <% } %>
-
-                    <% if(product.deleted === true) { %>
-                    <form id="undelete-form" action="/products/<%= product._id %>?_method=PUT" method="POST">
-                        <input type="hidden" value="false" name="product[deleted]">
-                        <button class="btn">undelete</button>
-                    </form>
-                    <% } %>
-                </td>
-            </tr>
-
-
-            <% }); %>
-        </table>
     </div>
+    <br>
 
 
+    <!-- Table -->
+
+
+    <table class="table">
+        <tr>
+            <th class="th-id">#</th>
+            <th>Product name</th>
+            <th>description</th>
+            <th>price</th>
+        </tr>
+        <% products.forEach(function(product){ %>
+        <tr
+                <% if(product.deleted === true) { %>
+                class="disabled"
+                <% } %>
+        >
+            <td><%= product.ordernumber %></td>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.price %> €</td>
+
+            <td>
+                <% if(product.deleted === false) { %>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editproduct"
+                        data-product-name="<%= product.name %>" data-product-price="<%= product.price %>"
+                        data-product-description="<%= product.description %>"
+                        data-product-ordernumber="<%= product.ordernumber %>" data-product-id="<%= product._id %>">
+                    Edit
+                </button>
+                <% } %>
+            </td>
+            <td>
+                <% if(product.deleted === false) { %>
+                <form id="delete-form" action="/products/<%= product._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                <% } %>
+
+                <% if(product.deleted === true) { %>
+                <form id="undelete-form" action="/products/<%= product._id %>?_method=PUT" method="POST">
+                    <input type="hidden" value="false" name="product[deleted]">
+                    <button class="btn">undelete</button>
+                </form>
+                <% } %>
+            </td>
+        </tr>
+
+        <% }); %>
+    </table>
 </div>
 <!-- Button trigger modal -->
 

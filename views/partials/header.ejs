@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/jquery-2.2.1.min.js"></script>
-    <script src="/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC0v-n-EPO_w9_yWgB4gyhD84piNqZoQt4&libraries=places"></script>
 </head>
 <body>
@@ -21,10 +23,17 @@
                 <li><a href="/customers">Customers</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+
                 <% if(!currentUser){ %>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Sign Up</a></li>
                 <% } else { %>
+                <li>
+                    <p class="navbar-btn">
+                        <button class="btn btn-default" type="submit">New Order</button>
+
+                    </p>
+                </li>
                 <li><a href="#">Signed In As <%= currentUser.username %></a></li>
                 <li><a href="/logout">Logout</a></li>
                 <% } %>
@@ -39,7 +48,7 @@
     </div>
     <% } %>
 
-    <% if (success && success.length > 0) {%>
+    <% if (success && success.length > 0) { %>
 
     <div class="alert alert-success" role="alert">
         <%= success %>

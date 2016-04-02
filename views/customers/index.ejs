@@ -2,65 +2,56 @@
 
 
 <div class="container">
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Customers</div>
-        <div class="container-fluid">
-            <div class="row">
-                <br>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" placeholder="Search">
-
-                </div>
-                <div class="col-lg-2">
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#newcustomer">
-                        New customer
-                    </button>
-                </div>
-
-            </div>
-            <br>
+    <div class="row">
+        <div class="col-lg-10">
+            <input type="text" class="form-control" placeholder="Search">
         </div>
-
-
-        <!-- Table -->
-        <table class="table">
-            <tr>
-                <th class="th-id">Customer<br>ID</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>edit</th>
-                <th>new</th>
-                <!--<th>delete</th>-->
-            </tr>
-
-            <% customer.forEach(function(customer){ %>
-            <tr>
-                <td>null</td>
-                <td><%= customer.name %></td>
-                <td><%= customer.phone %></td>
-                <td><%= customer.street + " " + customer.housenumber + " " + customer.city %></td>
-                <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editCustomer" data-customer-phone="<%= customer.phone %>" data-customer-name="<%= customer.name %>" data-customer-street="<%= customer.street %>" data-customer-housenumber="<%= customer.housenumber %>" data-customer-city="<%= customer.city %>" data-customer-zip="<%= customer.zipcode %>" data-customer-mail="<%= customer.mail %>" data-customer-story="<%= customer.story %>" data-customer-id="<%= customer._id %>">
-                        Edit
-                    </button>
-                </td>
-                <td>
-                    <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
-                </td>
-                <!--<td>-->
-                    <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
-                        <!--<button class="btn btn-danger">Delete</button>-->
-                    <!--</form>-->
-                <!--</td>-->
-            </tr>
-            <% }); %>
-        </table>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#newcustomer">
+                New customer
+            </button>
+        </div>
     </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>edit</th>
+            <th>new</th>
+            <!--<th>delete</th>-->
+        </tr>
 
-
+        <% customer.forEach(function(customer){ %>
+        <tr>
+            <td><%= customer.name %></td>
+            <td><%= customer.phone %></td>
+            <td><%= customer.street + " " + customer.housenumber + " " + customer.city %></td>
+            <td>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editCustomer"
+                        data-customer-phone="<%= customer.phone %>" data-customer-name="<%= customer.name %>"
+                        data-customer-street="<%= customer.street %>"
+                        data-customer-housenumber="<%= customer.housenumber %>"
+                        data-customer-city="<%= customer.city %>" data-customer-zip="<%= customer.zipcode %>"
+                        data-customer-mail="<%= customer.mail %>" data-customer-story="<%= customer.story %>"
+                        data-customer-id="<%= customer._id %>">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
+            </td>
+            <!--<td>-->
+            <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
+            <!--<button class="btn btn-danger">Delete</button>-->
+            <!--</form>-->
+            <!--</td>-->
+        </tr>
+        <% }); %>
+    </table>
 </div>
+
 <!-- Button trigger modal -->
 
 
@@ -111,7 +102,8 @@
 
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <input id="route" type="text" class="form-control" placeholder="street" name="customer[street]" >
+                                <input id="route" type="text" class="form-control" placeholder="street"
+                                       name="customer[street]">
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -122,12 +114,14 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input id="locality" type="text" class="form-control" placeholder="City" name="customer[city]">
+                                <input id="locality" type="text" class="form-control" placeholder="City"
+                                       name="customer[city]">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input id="postal_code" type="text" class="form-control" placeholder="zip" name="customer[zipcode]">
+                                <input id="postal_code" type="text" class="form-control" placeholder="zip"
+                                       name="customer[zipcode]">
                             </div>
                         </div>
                         <div class="col-lg-2">

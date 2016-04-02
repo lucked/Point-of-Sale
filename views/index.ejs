@@ -1,23 +1,26 @@
 <% include partials/header %>
-<h1>some text bla</h1>
-<div class="row">
-    <div class="col-lg-6">
-        <table class="table">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
 
-            <% orders.forEach(function(order){ %>
-            <tr>
-                <td><%= order.customer.Customer %></td>
-                <td><%= order.info %></td>
-                <td><%= order.ordered %></td>
-                <td>
-                    <button type="button" class="btn btn-primary btn-lg">
-                        <i class="glyphicon glyphicon-ok"></i>
-                    </button>
-                </td>
-            </tr>
-            <% }); %>
-        </table>
+                <% orders.forEach(function(order){ %>
+                <tr>
+                    <td><%= order.customer.Customer %></td>
+                    <td><%= order.info %></td>
+                    <td><%= order.ordered %></td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-lg">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                    </td>
+                </tr>
+                <% }); %>
+            </table>
+        </div>
     </div>
+
 </div>
+
 
 <% include partials/footer %>
