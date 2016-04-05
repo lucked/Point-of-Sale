@@ -6,7 +6,7 @@ var User = require("../models/users");
 /* GET home page. */
 
 router.get("/", function (req, res) {
-  orders.find({},function (err, allorders) {
+  orders.find({}).populate("customer.id").exec(function (err, allorders) {
     if (err) {
       console.log(err);
     } else {

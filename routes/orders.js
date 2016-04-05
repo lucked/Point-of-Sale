@@ -38,7 +38,7 @@ router.post("/", function (req, res) {
                 info: req.body.info,
                 customer : {
                     Customer: customer.name,
-                    id: customer.id
+                    id: customer._id
                 },
                 products: req.body.orderlist
             };
