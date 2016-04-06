@@ -8,7 +8,7 @@ var customer = require("../models/customers");
 
 //var middleware = require("../middleware");
 
-//INDEX - show all Products
+//INDEX - show all Customers
 router.get("/", function (req, res) {
     customer.find({}).populate("orders").exec(function (err, allCustomers) {
         if (err) {
@@ -19,7 +19,7 @@ router.get("/", function (req, res) {
     });
 });
 
-//CREATE - add new Product to DB
+//CREATE - add new Customers to DB
 router.post("/", function (req, res) {
     var newcustomer = req.body.customer;
     customer.create(newcustomer, function (err) {
@@ -45,7 +45,7 @@ router.put("/:id", function (req, res) {
     })
 });
 
-// REMOVE - Delete a product
+// REMOVE - Delete a Customer
 router.delete("/:id", function (req, res) {
     customer.findByIdAndUpdate(req.params.id,{deleted:true} ,function (err){
         if (err) {
