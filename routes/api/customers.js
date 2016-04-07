@@ -7,6 +7,7 @@ var router = express.Router({
 });
 var customer = require("../../models/customers");
 var middleware = require("../../middleware/index.js");
+//TODO add a way for pagination
 //INDEX - show all Customers
 router.get("/", middleware.isLoggedIn, function(req, res) {
     var re = new RegExp(req.query.search);
@@ -40,5 +41,7 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
         }
     });
 });
+
+// TODO add findsingle for id
 
 module.exports = router;

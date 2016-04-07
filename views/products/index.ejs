@@ -21,6 +21,7 @@
             <th></th>
             <th></th>
         </tr>
+        // TODO move table creation with api calls to the frontend also add pagination
         <% products.forEach(function(product){ %>
             <tr <% if(product.deleted===t rue) { %> class="disabled" <% } %>>
                 <td>
