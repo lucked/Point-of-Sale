@@ -1,5 +1,7 @@
 <% include ../partials/header %>
-<script> var products = <%- JSON.stringify(products) %> </script>
+<script>
+    var products = <%- JSON.stringify(products) %>
+</script>
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
@@ -7,27 +9,26 @@
             <br>
             <table class="table table-hover">
                 <% products.forEach(function(product){ %>
-                <tr>
-                    <td><%= product.ordernumber %></td>
-                    <td><%= product.name %></td>
-                    <td><%= product.description %></td>
-                    <td style="width: 75px"><%= product.price %> €</td>
-                    <td>
-                        <button type="button" class="btn btn-primary"
-                                onclick="addOrderlist('<%= product._id %>')">
-                            Add to Order
-                        </button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><%= product.ordernumber %></td>
+                        <td><%= product.name %></td>
+                        <td><%= product.description %></td>
+                        <td style="width: 75px"><%= product.price %>
+                            €</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addOrderlist('<%= product._id %>')">
+                                Add to Order
+                            </button>
+                        </td>
+                    </tr>
                 <% }); %>
             </table>
         </div>
         <div class="col-lg-4">
             <p>Ordered Products</p>
-            <table class="table table-hover" id="ordertable" style="font-size: 12px;">
-            </table>
-
-            <p>Total: <span id="sum">0.00</span>€</p>
+            <table class="table table-hover" id="ordertable" style="font-size: 12px;"></table>
+            <p>Total:
+                <span id="sum">0.00</span>€</p>
             <form action="/customers/<%= customer._id %>/orders" id="orderform" method="post">
                 <textarea name="info" rows="4" class="form-control" placeholder="Additional Info"></textarea>
                 <br>
@@ -36,6 +37,5 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript" src="/js/order.js"></script>
 <% include ../partials/footer %>

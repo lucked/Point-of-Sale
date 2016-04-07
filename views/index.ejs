@@ -1,26 +1,55 @@
 <% include partials/header %>
 <div class="container">
+    <script>
+        var typingTimer;
+        var doneTypingInterval = 5000;
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(test, doneTypingInterval);
+        function queryapi(value) {
+            if (value.length >= 3 || value.length == 0) {
+                var url = "api/customers/?search=" + value;
+                $.getJSON({
+                    type: 'get',
+                    url: url,
+                    success: function(data) {
+                        data.forEach(function(element) {
+                            console.log(element.name)
+                        })
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        console.log(errorThrown)
+                    }
+                });
+            }
+        }
+    </script>
+    <input type="text" oninput="queryapi(this.value)" id="test">
+    <div>
+        <table class="table" id="table"></table>
+    </div>
     <div class="row">
         <div class="col-lg-6">
             <table class="table">
-
                 <% orders.forEach(function(order){ %>
-                <tr>
-                    <td><%= order.customer.id.name %></td>
-                    <td><%= order.info %></td>
-                    <td><%= order.ordered %></td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-lg">
-                            <i class="glyphicon glyphicon-ok"></i>
-                        </button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <%= order.customer.id.name %>
+                        </td>
+                        <td>
+                            <%= order.info %>
+                        </td>
+                        <td>
+                            <%= order.ordered %>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-lg">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+                        </td>
+                    </tr>
                 <% }); %>
             </table>
         </div>
     </div>
-
 </div>
-
-
 <% include partials/footer %>

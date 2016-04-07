@@ -1,6 +1,4 @@
 <% include ../partials/header %>
-
-
 <div class="container">
     <div class="row">
         <div class="col-lg-10">
@@ -22,46 +20,50 @@
             <th>new</th>
             <!--<th>delete</th>-->
         </tr>
-
         <% customer.forEach(function(customer){ %>
-        <tr>
-            <td><%= customer.name %></td>
-            <td><%= customer.phone %></td>
-            <td><%= customer.street + " " + customer.housenumber + " " + customer.city %></td>
-            <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editCustomer"
-                        data-customer-phone="<%= customer.phone %>" data-customer-name="<%= customer.name %>"
+            <tr>
+                <td><%= customer.name %></td>
+                <td><%= customer.phone %></td>
+                <td><%= customer.street + " " + customer.housenumber + " " + customer.city %></td>
+                <td>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-toggle="modal"
+                        data-target="#editCustomer"
+                        data-customer-phone="<%= customer.phone %>"
+                        data-customer-name="<%= customer.name %>"
                         data-customer-street="<%= customer.street %>"
                         data-customer-housenumber="<%= customer.housenumber %>"
-                        data-customer-city="<%= customer.city %>" data-customer-zip="<%= customer.zipcode %>"
-                        data-customer-mail="<%= customer.mail %>" data-customer-story="<%= customer.story %>"
+                        data-customer-city="<%= customer.city %>"
+                        data-customer-zip="<%= customer.zipcode %>"
+                        data-customer-mail="<%= customer.mail %>"
+                        data-customer-story="<%= customer.story %>"
                         data-customer-id="<%= customer._id %>">
-                    Edit
-                </button>
-            </td>
-            <td>
-                <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
-            </td>
-            <!--<td>-->
-            <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
-            <!--<button class="btn btn-danger">Delete</button>-->
-            <!--</form>-->
-            <!--</td>-->
-        </tr>
+                        Edit
+                    </button>
+                </td>
+                <td>
+                    <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
+                </td>
+                <!--<td>-->
+                <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
+                <!--<button class="btn btn-danger">Delete</button>-->
+                <!--</form>-->
+                <!--</td>-->
+            </tr>
         <% }); %>
     </table>
 </div>
-
 <!-- Button trigger modal -->
-
-
 <!-- Modal New Product ! -->
 <div class="modal fade" id="newcustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">New customer</h4>
             </div>
             <div class="modal-body">
@@ -76,8 +78,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phonenumber"
-                                       name="customer[phone]">
+                                <input type="text" class="form-control" placeholder="Phonenumber" name="customer[phone]">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -99,29 +100,24 @@
                                 <input id="newCustAdd" type="text" class="form-control" placeholder="Adress search">
                             </div>
                         </div>
-
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <input id="route" type="text" class="form-control" placeholder="street"
-                                       name="customer[street]">
+                                <input id="route" type="text" class="form-control" placeholder="street" name="customer[street]">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <input id="street_number" type="text" class="form-control" placeholder="houseumber"
-                                       name="customer[housenumber]">
+                                <input id="street_number" type="text" class="form-control" placeholder="houseumber" name="customer[housenumber]">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input id="locality" type="text" class="form-control" placeholder="City"
-                                       name="customer[city]">
+                                <input id="locality" type="text" class="form-control" placeholder="City" name="customer[city]">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input id="postal_code" type="text" class="form-control" placeholder="zip"
-                                       name="customer[zipcode]">
+                                <input id="postal_code" type="text" class="form-control" placeholder="zip" name="customer[zipcode]">
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -129,10 +125,7 @@
                                 <input type="text" class="form-control" placeholder="Floor" name="customer[story]">
                             </div>
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
                         <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                     </div>
@@ -149,8 +142,9 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">Neuer Kunde</h4>
             </div>
             <div class="modal-body">
@@ -165,20 +159,17 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phonenumber"
-                                       name="customer[phone]" id="phone">
+                                <input type="text" class="form-control" placeholder="Phonenumber" name="customer[phone]" id="phone">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name" name="customer[name]"
-                                       id="name">
+                                <input type="text" class="form-control" placeholder="Name" name="customer[name]" id="name">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="e-mail" name="customer[mail]"
-                                       id="mail">
+                                <input type="text" class="form-control" placeholder="e-mail" name="customer[mail]" id="mail">
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -190,41 +181,32 @@
                                 <input id="editCustAdd" type="text" class="form-control" placeholder="Adress search">
                             </div>
                         </div>
-
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="street" id="street"
-                                       name="customer[street]">
+                                <input type="text" class="form-control" placeholder="street" id="street" name="customer[street]">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="houseumber"
-                                       name="customer[housenumber]" id="housenumber">
+                                <input type="text" class="form-control" placeholder="houseumber" name="customer[housenumber]" id="housenumber">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="City" name="customer[city]"
-                                       id="city">
+                                <input type="text" class="form-control" placeholder="City" name="customer[city]" id="city">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="zip" name="customer[zipcode]"
-                                       id="zipcode">
+                                <input type="text" class="form-control" placeholder="zip" name="customer[zipcode]" id="zipcode">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Floor" name="customer[story]"
-                                       id="story">
+                                <input type="text" class="form-control" placeholder="Floor" name="customer[story]" id="story">
                             </div>
                         </div>
-
                     </div>
-
-
                     <div class="form-group">
                         <button class="btn btn-lg btn-primary btn-block">Submit!</button>
                     </div>
@@ -236,9 +218,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript" src="/js/customer.js"></script>
 <script type="text/javascript" src="js/automap.js"></script>
-
-
 <% include ../partials/footer %>
