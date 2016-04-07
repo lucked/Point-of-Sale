@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-10">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search" oninput="queryapi(this.value)">
         </div>
         <div class="col-lg-2">
             <button type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#newcustomer">
@@ -11,49 +11,7 @@
         </div>
     </div>
     <br>
-    <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>edit</th>
-            <th>new</th>
-            <!--<th>delete</th>-->
-        </tr>
-        <% customer.forEach(function(customer){ %>
-            <tr>
-                <td><%= customer.name %></td>
-                <td><%= customer.phone %></td>
-                <td><%= customer.street + " " + customer.housenumber + " " + customer.city %></td>
-                <td>
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-toggle="modal"
-                        data-target="#editCustomer"
-                        data-customer-phone="<%= customer.phone %>"
-                        data-customer-name="<%= customer.name %>"
-                        data-customer-street="<%= customer.street %>"
-                        data-customer-housenumber="<%= customer.housenumber %>"
-                        data-customer-city="<%= customer.city %>"
-                        data-customer-zip="<%= customer.zipcode %>"
-                        data-customer-mail="<%= customer.mail %>"
-                        data-customer-story="<%= customer.story %>"
-                        data-customer-id="<%= customer._id %>">
-                        Edit
-                    </button>
-                </td>
-                <td>
-                    <a href="customers/<%= customer._id %>/orders/new" class="btn btn-success">New order</a>
-                </td>
-                <!--<td>-->
-                <!--<form id="delete-form" action="/customers/<%= customer._id %>?_method=DELETE" method="POST">-->
-                <!--<button class="btn btn-danger">Delete</button>-->
-                <!--</form>-->
-                <!--</td>-->
-            </tr>
-        <% }); %>
-    </table>
+    <table class="table" id="customertable"></table>
 </div>
 <!-- Button trigger modal -->
 <!-- Modal New Product ! -->
