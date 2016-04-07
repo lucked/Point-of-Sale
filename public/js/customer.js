@@ -5,15 +5,8 @@
 $('#editCustomer').on('show.bs.modal', function(event) {
 
     var button = $(event.relatedTarget); // Button that triggered the modal
-    var name = button.data('customer-name');
-    var phone = button.data('customer-phone');
-    var street = button.data('customer-street');
-    var housenumber = button.data('customer-housenumber');
-    var city = button.data('customer-city');
-    var mail = button.data('customer-mail');
-    var story = button.data('customer-story');
     var id = button.data('customer-id');
-    var zip = button.data('customer-zip');
+
     var modal = $(this);
     modal.find('.modal-title').text('Kunden bearbeiten' + name);
     modal.find('#name').val(name);
@@ -30,3 +23,27 @@ $('#editCustomer').on('show.bs.modal', function(event) {
 
     //modal.find(".modal-body form").action = "/products/" + id + "?_method=PUT";
 });
+
+
+function queryapi(value) {
+    if (value.length >= 3 || value.length === 0) {
+        var url = "api/customers/?search=" + value;
+        $.getJSON({
+            type: 'get',
+            url: url,
+            success: function(data) {
+                var newtable = "<tbody><tr><th>Name</th><th>Phone</th><th>Address</th><th>edit</th><th>new</th></tr>";
+                data.forEach(function(element) {
+                    newtable = newtable + "<tr> <td> " + element.name + " </td><td>" + element.phone + "</td > <td>" + element.street + " " + element.housenumber + " " + element.city + "</td> <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editCustomer' data-customer-id='" + element._id + "'>Edit</button> </td> <td><a href='customers/" + element._id + "/orders/new' class='btn btn-success'>New order</a></td></tr>";
+                });
+                console.log(newtable + " < /tbody>");
+                $("#customertable").html(newtable + "</tbody > ");
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
+}
+
+queryapi("");
