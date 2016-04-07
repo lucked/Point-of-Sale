@@ -2,8 +2,14 @@ var mongoose = require("mongoose");
 
 var OrderSchema = mongoose.Schema({
     info: String,
-    delivered: {type: Boolean, default: false},
-    ordered: {type: Date, default: Date.now},
+    delivered: {
+        type: Boolean,
+        default: false
+    },
+    ordered: {
+        type: Date,
+        default: Date.now
+    },
     // to be added when login / user management is enabled
     //employer: {
     //    id: {
@@ -19,12 +25,10 @@ var OrderSchema = mongoose.Schema({
         },
         Customer: String
     },
-    products: [
-        {
-            type : mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    ]
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }]
 
 });
 

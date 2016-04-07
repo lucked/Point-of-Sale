@@ -59,7 +59,7 @@ router.delete("/:id", function(req, res) {
         } else {
             res.redirect("/customers");
         }
-    })
+    });
 });
 
 

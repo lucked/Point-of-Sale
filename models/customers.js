@@ -11,16 +11,17 @@ var CustomerSchema = new mongoose.Schema({
     street: String,
     housenumber: String,
     city: String,
-    deleted: {type: Boolean, default: false},
+    deleted: {
+        type: Boolean,
+        default: false
+    },
     zipcode: String,
     story: String,
 
-    orders: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Order"
-        }
-    ]
+    orders: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order"
+    }]
 });
 
 module.exports = mongoose.model("Customer", CustomerSchema);

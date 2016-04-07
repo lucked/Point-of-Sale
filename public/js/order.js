@@ -2,6 +2,7 @@
  * Created by Pierre on 16.03.16.
  */
 counter = 0;
+
 function findById(source, id) {
     for (var i = 0; i < source.length; i++) {
         if (source[i]._id === id) {
@@ -31,7 +32,7 @@ function addOrderlist(id) {
     updateordered(product._id);
 }
 
-function updateordered (id) {
+function updateordered(id) {
 
 
     var input = document.createElement("input");
@@ -43,9 +44,10 @@ function updateordered (id) {
     input.setAttribute("value", id);
 
     document.getElementById("orderform").appendChild(input);
-counter ++
+    counter++;
 }
-function updatePrice (price) {
+
+function updatePrice(price) {
     sum = document.getElementById("sum");
 
     oldtotal = parseInt(sum.innerHTML);
