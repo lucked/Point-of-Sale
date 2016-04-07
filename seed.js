@@ -28,9 +28,9 @@ for (i = 0; i < 100; i++) {
     };
     customers.push(obj);
 }
-//console.log (arr);
+// Todo 
 function seedDB() {
-    //Remove all campgrounds
+    //Remove all products
     product.remove({}, function(err) {
         if (err) {
             console.log(err);
