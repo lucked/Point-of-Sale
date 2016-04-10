@@ -9,8 +9,13 @@ var customer = require("../../models/customers");
 var middleware = require("../../middleware/index.js");
 //TODO add a way for pagination
 //INDEX - show all Customers
-router.get("/", middleware.isLoggedIn, function(req, res) {
+router.get("/", function(req, res) {
     var re = new RegExp(req.query.search);
+    var offset = 0;
+    if (req.query.offset) {
+        offset = req.query.offset;
+        console.log(offset)
+    }
     customer.find().or([{
         'name': {
             $regex: re
@@ -31,7 +36,7 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
         'street': {
             $regex: re
         }
-    }]).limit(20).exec(function(err, allCustomers) {
+    }]).skip(parseInt(offset)).limit(20).exec(function(err, allCustomers) {
         if (err) {
             console.log(err);
         } else if (allCustomers.length === 0) {
