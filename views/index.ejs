@@ -1,29 +1,5 @@
 <% include partials/header %>
 <div class="container">
-    <script>
-        var typingTimer;
-        var doneTypingInterval = 5000;
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(test, doneTypingInterval);
-        function queryapi(value) {
-            if (value.length >= 3 || value.length == 0) {
-                var url = "api/customers/?search=" + value;
-                $.getJSON({
-                    type: 'get',
-                    url: url,
-                    success: function(data) {
-                        data.forEach(function(element) {
-                            console.log(element.name)
-                        })
-                    },
-                    error: function(xhr, textStatus, errorThrown) {
-                        console.log(errorThrown)
-                    }
-                });
-            }
-        }
-    </script>
-    <input type="text" oninput="queryapi(this.value)" id="test">
     <div>
         <table class="table" id="table"></table>
     </div>
