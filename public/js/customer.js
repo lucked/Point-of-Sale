@@ -36,7 +36,6 @@ function queryapi(value) {
                 data.forEach(function(element) {
                     newtable = newtable + "<tr> <td> " + element.name + " </td><td>" + element.phone + "</td > <td>" + element.street + " " + element.housenumber + " " + element.city + "</td> <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editCustomer' data-customer-id='" + element._id + "'>Edit</button> </td> <td><a href='customers/" + element._id + "/orders/new' class='btn btn-success'>New order</a></td></tr>";
                 });
-                console.log(newtable + " < /tbody>");
                 $("#customertable").html(newtable + "</tbody > ");
             },
             error: function(xhr, textStatus, errorThrown) {
