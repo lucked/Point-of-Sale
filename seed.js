@@ -5,7 +5,7 @@ var Faker = require('faker');
 var arr = [];
 var customers = [];
 
-for (i = 0; i < 100; i++) {
+for (i = 0; i < 20; i++) {
     var obj = {
         name: Faker.commerce.productName(),
         price: Faker.commerce.price(),
@@ -15,7 +15,7 @@ for (i = 0; i < 100; i++) {
     arr.push(obj);
 
 }
-for (i = 0; i < 100; i++) {
+for (i = 0; i < 20; i++) {
     var obj = {
         phone: Faker.phone.phoneNumber(),
         name: Faker.name.lastName(),
@@ -28,7 +28,7 @@ for (i = 0; i < 100; i++) {
     };
     customers.push(obj);
 }
-// Todo 
+// Todo
 function seedDB() {
     //Remove all products
     product.remove({}, function(err) {
