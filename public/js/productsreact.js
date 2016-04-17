@@ -64,12 +64,12 @@ var ProductTable = React.createClass({
       <table className="table" id="productstable">
         <thead>
           <tr>
-              <th>#</th>
-              <th>Product name</th>
-              <th>description</th>
-              <th>price</th>
-              <th></th>
-              <th></th>
+              <th className="col-lg-1">#</th>
+              <th className="col-lg-3">Product name</th>
+              <th className="col-lg-3">description</th>
+              <th className="col-lg-1">price</th>
+              <th className="col-lg-2"></th>
+              <th className="col-lg-2"></th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

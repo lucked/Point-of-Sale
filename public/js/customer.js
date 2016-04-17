@@ -32,7 +32,7 @@ function queryapi(value) {
             type: 'get',
             url: url,
             success: function(data) {
-                var newtable = "<tbody><tr><th>Name</th><th>Phone</th><th>Address</th><th>edit</th><th>new</th></tr>";
+                var newtable = "<tbody><tr><th class='col-lg-2'>Name</th><th class='col-lg-3'>Phone</th><th class='col-lg-5'>Address</th><th class='col-lg-2'>edit</th><th class='col-lg-2'>new</th></tr>";
                 data.forEach(function(element) {
                     newtable = newtable + "<tr> <td> " + element.name + " </td><td>" + element.phone + "</td > <td>" + element.street + " " + element.housenumber + " " + element.city + "</td> <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#editCustomer' data-customer-id='" + element._id + "'>Edit</button> </td> <td><a href='customers/" + element._id + "/orders/new' class='btn btn-success'>New order</a></td></tr>";
                 });
