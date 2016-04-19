@@ -29,7 +29,7 @@ var ProductRow = React.createClass({
 
 
 
-    var trClass = this.props.product.deleted ? "disabled":"";
+    var trClass = this.props.product.deleted ? "disabled active":"";
     return (
       <tr className={trClass}>
         <td>{this.props.product.ordernumber}</td>
@@ -66,10 +66,10 @@ var ProductTable = React.createClass({
           <tr>
               <th className="col-lg-1">#</th>
               <th className="col-lg-3">Product name</th>
-              <th className="col-lg-3">description</th>
+              <th className="col-lg-5">description</th>
               <th className="col-lg-1">price</th>
-              <th className="col-lg-2"></th>
-              <th className="col-lg-2"></th>
+              <th className="col-lg-1"></th>
+              <th className="col-lg-1"></th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
