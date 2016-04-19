@@ -1,17 +1,8 @@
 <% include ../partials/header %>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10">
-            <input type="text" class="form-control" placeholder="Search" oninput="queryapi(this.value)">
-        </div>
-        <div class="col-lg-2">
-            <button type="button" class="btn btn-primary center-block" data-toggle="modal" data-target="#newcustomer">
-                New customer
-            </button>
-        </div>
-    </div>
-    <br>
-    <table class="table" id="customertable"></table>
+<script type="text/babel" src="/js/customersreact.js"></script>
+
+<div class="container" id="content">
+
 </div>
 <!-- Button trigger modal -->
 <!-- Modal New Product ! -->

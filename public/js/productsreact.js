@@ -1,9 +1,3 @@
-// components
-// SearchableProductTable
-// SearchBar
-// ProductTable
-// ProductRow
-
 var ProductRow = React.createClass({
   render: function () {
     var deletebutton = this.props.product.deleted ?

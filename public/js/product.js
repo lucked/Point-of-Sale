@@ -1,10 +1,6 @@
 $('#editproduct').on('show.bs.modal', function(event) {
-    var button = $(event.relatedTarget); // Button that triggered the modal
-    // var name = button.data('product-name'); // Extract info from data-* attributes
-    // var price = button.data('product-price'); // Extract info from data-* attributes
-    // var description = button.data('product-description'); // Extract info from data-* attributes
-    // var ordernumber = button.data('product-ordernumber'); // Extract info from data-* attributes
-    var id = button.data('product-id'); // Extract info from data-* attributes
+    var button = $(event.relatedTarget);
+    var id = button.data('product-id');
     console.log(id);
     var modal = $(this);
     var url = "/api/products/?search=" + id;
