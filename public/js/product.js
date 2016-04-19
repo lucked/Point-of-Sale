@@ -1,16 +1,13 @@
 $('#editproduct').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
     var id = button.data('product-id');
-    console.log(id);
     var modal = $(this);
     var url = "/api/products/?search=" + id;
-    console.log (url)
     $.getJSON({
         type: 'get',
         url: url,
         success: function(data) {
             var data=data[0];
-            console.log(data)
             modal.find('.modal-title').text('Produkt bearbeiten' + data.name);
             modal.find('#name').val(data.name);
             modal.find('#price').val(data.price);
@@ -20,7 +17,6 @@ $('#editproduct').on('show.bs.modal', function(event) {
             modal.find(".modal-body form").attr("action", form_url);
         },
         error: function(xhr, textStatus, errorThrown) {
-            console.log(errorThrown);
         }
     });
 

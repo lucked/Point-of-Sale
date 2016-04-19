@@ -93,7 +93,6 @@ var FilterableProductTable = React.createClass({
     return {products: []};
   },
   handleSearchSubmit: function (search) {
-    console.log (search)
       $.ajax({
         url: "/api/products?search=" + search,
         dataType: 'json',
@@ -105,8 +104,6 @@ var FilterableProductTable = React.createClass({
           console.error("api/products/", status, err.toString());
         }.bind(this)
       });
-      console.log(this.state)
-
   },
   componentDidMount: function() {
     $.ajax({

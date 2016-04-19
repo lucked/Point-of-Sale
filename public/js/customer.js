@@ -26,7 +26,6 @@ $('#editCustomer').on('show.bs.modal', function(event) {
             modal.find(".modal-body form").attr("action", form_url);
         },
         error: function(xhr, textStatus, errorThrown) {
-            console.log(errorThrown);
         }
     });
 });

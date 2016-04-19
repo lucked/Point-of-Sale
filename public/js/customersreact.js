@@ -67,7 +67,6 @@ var FilterableCustomerTable = React.createClass({
     return {customers: []};
   },
   handleSearchSubmit: function (search) {
-    console.log (search)
       $.ajax({
         url: "/api/customers?search=" + search,
         dataType: 'json',
@@ -79,8 +78,6 @@ var FilterableCustomerTable = React.createClass({
           console.error("api/customers/", status, err.toString());
         }.bind(this)
       });
-      console.log(this.state)
-
   },
   componentDidMount: function() {
     $.ajax({

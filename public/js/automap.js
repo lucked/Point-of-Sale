@@ -11,7 +11,6 @@ var componentForm = {
 $('#newcustomer').on('show.bs.modal', function() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
-  console.log('in newcustomer');
   var inputField;
   document.getElementById('newCustAdd').addEventListener('click', function() {
 
@@ -28,7 +27,6 @@ $('#newcustomer').on('show.bs.modal', function() {
 $('#editCustomer').on('show.bs.modal', function() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
-  console.log('in editCustomer');
   var inputField;
   document.getElementById('editCustAdd').addEventListener('click', function() {
 
@@ -48,7 +46,6 @@ function fillInAddress() {
   var place = autocomplete.getPlace();
 
   for (var component in componentForm) {
-    console.log(component);
     document.getElementById(component).value = '';
     document.getElementById(component).disabled = false;
   }
