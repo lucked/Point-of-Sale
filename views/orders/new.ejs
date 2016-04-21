@@ -1,41 +1,12 @@
 <% include ../partials/header %>
 <script>
-    var products = <%- JSON.stringify(products) %>
+var customerid = <%- JSON.stringify(customer._id) %>
+
 </script>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-            <input type="text" class="form-control" placeholder="Search">
-            <br>
-            <table class="table table-hover">
-                <% products.forEach(function(product){ %>
-                    <tr>
-                        <td><%= product.ordernumber %></td>
-                        <td><%= product.name %></td>
-                        <td><%= product.description %></td>
-                        <td style="width: 75px"><%= product.price %>
-                            €</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" onclick="addOrderlist('<%= product._id %>')">
-                                Add to Order
-                            </button>
-                        </td>
-                    </tr>
-                <% }); %>
-            </table>
-        </div>
-        <div class="col-lg-4">
-            <p>Ordered Products</p>
-            <table class="table table-hover" id="ordertable" style="font-size: 12px;"></table>
-            <p>Total:
-                <span id="sum">0.00</span>€</p>
-            <form action="/customers/<%= customer._id %>/orders" id="orderform" method="post">
-                <textarea name="info" rows="4" class="form-control" placeholder="Additional Info"></textarea>
-                <br>
-                <button class="btn btn-success">Order</button>
-            </form>
-        </div>
-    </div>
+<script type="text/babel" src="/js/ordersreact.js"></script>
+
+<div class="container" id="content">
+
 </div>
 <script type="text/javascript" src="/js/order.js"></script>
 <% include ../partials/footer %>

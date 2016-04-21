@@ -14,7 +14,7 @@ Contributing Guidelines coming soon.
 ### Setup
 - download the repository
 - run npm install
-- run node ./bin/www
+- run npm start
 - visit [http://localhost:3000](http://localhost:3000)
 
 
