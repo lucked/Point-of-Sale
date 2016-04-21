@@ -50,9 +50,9 @@ function updateordered(id) {
 function updatePrice(price) {
     sum = document.getElementById("sum");
 
-    oldtotal = parseInt(sum.innerHTML);
+    oldtotal = parseFloat(sum.innerHTML);
     newtotal = oldtotal + price;
 
-    sum.innerHTML = newtotal;
+    sum.innerHTML = newtotal.toFixed(2);
 
 }
