@@ -11,7 +11,11 @@ var productSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    description: String
+    description: String,
+    productcategory: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Productcategory'
+    }]
 });
 
 module.exports = mongoose.model("Product", productSchema);

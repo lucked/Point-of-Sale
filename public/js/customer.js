@@ -3,6 +3,7 @@
  */
 
 $('#editCustomer').on('show.bs.modal', function(event) {
+
     var button = $(event.relatedTarget); // Button that triggered the modal
     var id = button.data('customer-id');
     var modal = $(this);
@@ -11,7 +12,7 @@ $('#editCustomer').on('show.bs.modal', function(event) {
         type: 'get',
         url: url,
         success: function(data) {
-            var customer=data[0]
+            var customer = data[0]
             modal.find('.modal-title').text('Kunden bearbeiten' + customer.name);
             modal.find('#name').val(customer.name);
             modal.find('#phone').val(customer.phone);
@@ -21,11 +22,9 @@ $('#editCustomer').on('show.bs.modal', function(event) {
             modal.find('#mail').val(customer.mail);
             modal.find('#story').val(customer.story);
             modal.find('#zipcode').val(customer.zipcode);
-
             form_url = "/customers/" + customer._id + "?_method=PUT";
             modal.find(".modal-body form").attr("action", form_url);
         },
-        error: function(xhr, textStatus, errorThrown) {
-        }
+        error: function(xhr, textStatus, errorThrown) {}
     });
 });
