@@ -7,7 +7,7 @@ $('#editproduct').on('show.bs.modal', function(event) {
         type: 'get',
         url: url,
         success: function(data) {
-            var data=data[0];
+            var data = data[0];
             modal.find('.modal-title').text('Produkt bearbeiten' + data.name);
             modal.find('#name').val(data.name);
             modal.find('#price').val(data.price);
@@ -16,10 +16,7 @@ $('#editproduct').on('show.bs.modal', function(event) {
             form_url = "/products/" + data._id + "?_method=PUT";
             modal.find(".modal-body form").attr("action", form_url);
         },
-        error: function(xhr, textStatus, errorThrown) {
-        }
+        error: function(xhr, textStatus, errorThrown) {}
     });
-
-
     //modal.find(".modal-body form").action = "/products/" + id + "?_method=PUT";
 });

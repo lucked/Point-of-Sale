@@ -6,12 +6,8 @@
 // Order row
 var ProductRow = React.createClass({
     render: function() {
-        var handleClick = function(product) {
-            console.log(product)
-            this.props.onOrderSubmit(product);
-        };
         return (
-            <tr onClick={this.props.onOrderSubmit.bind(this, this.props.product)}>
+            <tr onClick={this.props.onOrderSubmit.bind(null, this.props.product)}>
                 <td>{this.props.product.ordernumber}</td>
                 <td>{this.props.product.name}</td>
                 <td>{this.props.product.description}</td>
@@ -29,8 +25,8 @@ var ProductTable = React.createClass({
     },
     render: function() {
         var rows = [];
-        this.props.products.forEach(function(product) {
-            rows.push(<ProductRow product={product} key={product._id} onOrderSubmit={this.handleOrderSubmit}/>)
+        rows = this.props.products.map(function(product, index) {
+            return (<ProductRow product={product} key={index} onOrderSubmit={this.handleOrderSubmit}/>)
         }.bind(this));
         return (
             <table className="table table-hover" id="productstable">

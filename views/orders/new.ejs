@@ -1,12 +1,5 @@
 <% include ../partials/header %>
-<script>
-var customerid = <%- JSON.stringify(customer._id) %>
-
-</script>
+<script>var customerid = <%- JSON.stringify(customer._id) %></script>
 <script type="text/babel" src="/js/ordersreact.js"></script>
-
-<div class="container" id="content">
-
-</div>
-<script type="text/javascript" src="/js/order.js"></script>
+<div class="container" id="content"></div>
 <% include ../partials/footer %>
