@@ -5,7 +5,7 @@ var CustomerRow = React.createClass({
         <td>{this.props.customer.name}</td>
         <td>{this.props.customer.phone}</td>
         <td>{this.props.customer.street} {this.props.customer.housenumber} {this.props.customer.city}</td>
-        <td> <button type='button' className='btn btn-primary' data-toggle='modal' data-target='#editCustomer' data-customer-id= {this.props.customer._id}>Edit</button></td>
+        <td> <button type='button' className='btn btn-primary' data-toggle='modal' data-target='#newcustomer' data-customer-id= {this.props.customer._id}>Edit</button></td>
         <td><a href={"customers/" + this.props.customer._id + "/orders/new"} className='btn btn-success'>New order</a></td>
       </tr>
     );
@@ -16,7 +16,7 @@ var CustomeraddButton = React.createClass ({
     return (
       <div className="col-lg-2">
           <button type="button" className="btn btn-primary center-block" data-toggle="modal" data-target="#newcustomer">
-              Add product
+              Add Customer
           </button>
       </div>
     )

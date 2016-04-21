@@ -21,7 +21,7 @@ router.get("/", function(req, res) {
             }
         });
     } else {
-        var re = new RegExp(search);
+        var re = new RegExp(search, "i");
         var offset = 0;
         if (req.query.offset) {
             offset = req.query.offset;
